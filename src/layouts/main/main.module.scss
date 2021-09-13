@@ -1,0 +1,14 @@
+@import '../../styles/mixins.scss';
+
+.mainContainer {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  @include md {
+    padding: 32px;
+  }
+}

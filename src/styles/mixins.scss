@@ -1,0 +1,31 @@
+$screen-sm-min: 600px;
+$screen-md-min: 960px;
+$screen-lg-min: 1280px;
+
+// < 600px
+@mixin sm {
+  @media (max-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// > 600px
+@mixin md {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+// > 960px
+@mixin lg {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+// > 1280px
+@mixin xl {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}

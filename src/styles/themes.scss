@@ -1,0 +1,20 @@
+html.color-theme-in-transition,
+html.color-theme-in-transition *,
+html.color-theme-in-transition *:before,
+html.color-theme-in-transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+html {
+  --primaryTextColor: #3c4043;
+  --primaryBackgroundColor: #ffffff;
+  --footerBackgroundColor: rgb(33, 37, 41);
+  --footerTextColor: #9da2a7;
+  --footerTextColorHover: white;
+}
+
+html[data-theme='dark'] {
+  --primaryTextColor: #e8eaed;
+  --primaryBackgroundColor: #363c44;
+}

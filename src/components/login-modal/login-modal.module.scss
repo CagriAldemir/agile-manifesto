@@ -1,0 +1,17 @@
+.loginForm {
+  & > div {
+    margin-bottom: 18px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.languageSelect {
+  width: fit-content;
+  margin-right: auto;
+}
+
+.modalContent {
+  background-color: var(--primaryBackgroundColor);
+}

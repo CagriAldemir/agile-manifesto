@@ -1,0 +1,22 @@
+@import '../../styles/mixins.scss';
+
+.container {
+  text-align: center;
+}
+
+.loremTitle {
+  font-size: 24px;
+  margin-bottom: 24px;
+  @include md {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+}
+
+.loremText {
+  font-size: 14px;
+  white-space: pre-line;
+  @include md {
+    font-size: 18px;
+  }
+}

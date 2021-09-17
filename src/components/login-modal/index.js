@@ -14,7 +14,7 @@ import {
 import { LANGUAGE_KEYS } from '../../common/consts';
 
 function LoginModal({ isVisible, closeModal }) {
-  const { t: translate, i18n } = useTranslation();
+  const { t: translate } = useTranslation();
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [{ languageKey }, mainDispatch] = useMainContext();
@@ -22,7 +22,6 @@ function LoginModal({ isVisible, closeModal }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [selectedLanguage, setSelectedLanguage] = useState();
 
   useEffect(() => {
     isVisible && resetForm();
@@ -56,7 +55,6 @@ function LoginModal({ isVisible, closeModal }) {
     setName('');
     setEmail('');
     setPassword('');
-    setSelectedLanguage(null);
   };
 
   const login = () => {
@@ -72,14 +70,13 @@ function LoginModal({ isVisible, closeModal }) {
         email,
         password,
       };
-
       mainDispatch(setUserInfo(userInfo));
-      if (selectedLanguage && languageKey !== selectedLanguage) {
-        mainDispatch(setLanguage(selectedLanguage));
-        i18n.changeLanguage(selectedLanguage);
-      }
       closeModal();
     }
+  };
+
+  const changeLanguage = (e) => {
+    mainDispatch(setLanguage(e.target.value));
   };
 
   return (
@@ -110,8 +107,8 @@ function LoginModal({ isVisible, closeModal }) {
       </Modal.Body>
       <Modal.Footer>
         <Form.Select
-          value={selectedLanguage || languageKey}
-          onChange={(e) => setSelectedLanguage(e.target.value)}
+          value={languageKey}
+          onChange={changeLanguage}
           className={classes.languageSelect}
         >
           {Object.values(LANGUAGE_KEYS).map((langKey) => (

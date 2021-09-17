@@ -18,13 +18,12 @@ import { getCurrentPageNameKeyByPath } from '../../common/utils';
 import LoginModal from '../../components/login-modal';
 
 function Header() {
-  const { t: translate, i18n } = useTranslation();
+  const { t: translate } = useTranslation();
   const { pathname: pathName } = useLocation();
   const [{ languageKey, userInfo }, mainDispatch] = useMainContext();
   const [isLoginModalVisible, setLoginModalVisibility] = useState(false);
 
   const changeLanguageByKey = (langKey) => {
-    i18n.changeLanguage(langKey);
     mainDispatch(setLanguage(langKey));
   };
 

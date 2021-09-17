@@ -42,6 +42,24 @@ You can run the project in the development environment or production build. For 
    npm run start
    ```
 
+### Development Build with Docker
+
+1. Go to root directory of project.
+
+2. Build Docker image
+
+```
+docker build -t agile-manifesto-sample-react-project .
+```
+
+3. Run Docker image
+
+```
+docker run -p <port-number>:3000 agile-manifesto-sample-react-project
+```
+
+4. Go to `http://localhost:<port-number>`
+
 ### Production Build
 
 1. Go to root directory of project.
